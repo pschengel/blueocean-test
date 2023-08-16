@@ -16,9 +16,11 @@ pipeline {
     stage('error') {
       steps {
         library 'testlib'
-        fileExists 'sendFeedback.groovy'
-        load 'sendFeedback.groovy'
         sh 'sendFeedback()'
+        script {
+          sendFeedback()
+        }
+
       }
     }
 
