@@ -9,7 +9,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             library 'testlib'
           }
@@ -24,8 +24,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
+        load 'sendFeedback'
         libraryResource 'sendFeedback'
       }
     }
