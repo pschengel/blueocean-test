@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        echo 'Building...'
+      parallel {
+        stage('Build') {
+          steps {
+            echo 'Building...'
+          }
+        }
+
+        stage('') {
+          steps {
+            library 'testlib'
+          }
+        }
+
       }
     }
 
@@ -13,9 +24,8 @@ pipeline {
       }
     }
 
-    stage('error') {
+    stage('') {
       steps {
-        library 'testlib'
         libraryResource 'sendFeedback'
       }
     }
