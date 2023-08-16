@@ -28,5 +28,11 @@ pipeline {
       }
     }
 
+    stage('testest') {
+      steps {
+        build 'test'
+      }
+    }
+
   }
 }
