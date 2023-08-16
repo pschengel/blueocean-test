@@ -16,7 +16,6 @@ pipeline {
     stage('error') {
       steps {
         library 'testlib'
-        sh 'sendFeedback()'
         script {
           sendFeedback()
         }
