@@ -19,18 +19,12 @@ pipeline {
       }
     }
 
-    stage('testtest') {
+    stage('http') {
       steps {
         script {
           sendFeedback()
         }
 
-      }
-    }
-
-    stage('testest') {
-      steps {
-        build 'test'
       }
     }
 
