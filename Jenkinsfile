@@ -18,6 +18,7 @@ pipeline {
         library 'testlib'
         fileExists 'sendFeedback.groovy'
         load 'sendFeedback.groovy'
+        sh 'sendFeedback()'
       }
     }
 
