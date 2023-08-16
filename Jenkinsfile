@@ -26,8 +26,16 @@ pipeline {
 
     stage('error') {
       steps {
-        load 'sendFeedback'
-        libraryResource 'sendFeedback'
+        script {
+          post {
+            always {
+              script {
+                sendFeedback()
+              }
+            }
+          }
+        }
+
       }
     }
 
