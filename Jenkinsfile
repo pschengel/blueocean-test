@@ -17,6 +17,7 @@ pipeline {
       steps {
         library 'testlib'
         fileExists 'sendFeedback.groovy'
+        readFile 'sendFeedback.groovy'
       }
     }
 
