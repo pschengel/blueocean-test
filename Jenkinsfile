@@ -13,9 +13,10 @@ pipeline {
       }
     }
 
-    stage('httprequest') {
+    stage('') {
       steps {
-        httpRequest(url: 'https://eohotv9zrfaegyf.m.pipedream.net', contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody: '{\\"result\\": \\"${currentBuild.result}\\", \\"message\\": \\"Your custom message here\\"}')
+        library 'testlib'
+        libraryResource 'sendFeedback'
       }
     }
 
