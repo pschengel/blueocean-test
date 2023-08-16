@@ -13,10 +13,10 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         library 'testlib'
-        libraryResource 'sendFeedback'
+        libraryResource 'sendFeedback()'
       }
     }
 
